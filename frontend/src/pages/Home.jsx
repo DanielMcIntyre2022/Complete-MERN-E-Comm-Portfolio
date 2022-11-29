@@ -1,7 +1,11 @@
+import Products from "../components/Products";
 
 function Home() {
   return (
-    <div>Home</div>
+    <div className="products-container">
+      <h1>Latest Products</h1>
+      <Products/>
+    </div>
   )
 }
 
