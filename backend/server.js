@@ -8,4 +8,9 @@ db();
 
 const app = express();
 
+// Link to API - Products Route //
+
+const productsRouter = require('./routes/products');
+app.use('/products', productsRouter);
+
 app.listen(port, console.log(`listening on port: ${port}`));
