@@ -31,7 +31,25 @@ function Products() {
   },[]);
 
   return (
-    <div>Products</div>
+    <div className='products-container'>
+      <div className='border border-gray-800 product-container'>
+        {
+          products.map(product => {
+            return <>
+              <div className='product-image'>
+                <img src={product.image}/>
+              </div>
+              <div className='product-name'>
+                <p>{product.name}</p>
+              </div>
+              <div className='product-price'>
+                <p>${product.price}</p>
+              </div>
+            </>
+          })
+        }
+      </div>
+    </div>
   )
 }
 
