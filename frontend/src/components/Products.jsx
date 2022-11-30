@@ -31,11 +31,10 @@ function Products() {
   },[]);
 
   return (
-    <div className='products-container'>
-      <div className='border border-gray-800 product-container'>
+    <div className='flex products-container'>
         {
           products.map(product => {
-            return <>
+            return <div className='border border-gray-800 product-container'>
               <div className='product-image'>
                 <img src={product.image}/>
               </div>
@@ -45,11 +44,10 @@ function Products() {
               <div className='product-price'>
                 <p>${product.price}</p>
               </div>
-            </>
+            </div>
           })
         }
       </div>
-    </div>
   )
 }
 
