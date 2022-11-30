@@ -7,6 +7,7 @@ const db = require('./config/db');
 db();
 
 const app = express();
+app.use(cors());
 
 // Link to API - Products Route //
 
