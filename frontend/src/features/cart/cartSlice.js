@@ -9,7 +9,14 @@ const initialState = {
 
 const cartSlice = createSlice({
     name: 'cart',
-    initialState
+    initialState, 
+    reducers: {
+        increase:(state, {payload}) => {
+            const cartItem = state.cartItems.find((item) => item._id === payload._id)
+            cartItem.amount = cartItem.amount +1;
+        }
+    }
 });
 
+// export const { increase } = cartItems.actions;
 export default cartSlice.reducer;

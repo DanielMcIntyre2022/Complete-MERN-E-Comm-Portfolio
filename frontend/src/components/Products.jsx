@@ -1,5 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { increase } from '../features/cart/cartSlice';
+import { useDispatch } from 'react-redux';
 
 const api = axios.create({
   baseURL: `http://localhost:3090`
@@ -8,8 +10,6 @@ const api = axios.create({
 function Products() {
 
   const [products, setProducts] = useState([]);
-
-  console.log(products);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -30,6 +30,8 @@ function Products() {
     fetchProducts();
   },[]);
 
+  const dispatch = useDispatch();
+
   return (
     <div className='flex products-container'>
         {
@@ -43,7 +45,11 @@ function Products() {
               </div>
               <div className='flex justify-between product-price'>
                 <p>${product.price}</p>
-                <button className='bg-slate-300 rounded-lg p-2'>Add to Cart</button>
+                <button 
+                onClick={() => {
+                  // dispatch(increase({_id}))
+                }}
+                className='amount-btn bg-slate-300 rounded-lg p-2'>Add to Cart</button>
               </div>
             </div>
           })
