@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import { FiShoppingCart } from 'react-icons/fi';
+import { RxPerson } from 'react-icons/rx';
 
 function Header() {
   return (
@@ -11,11 +13,29 @@ function Header() {
             </div>
         </div>
         <div className=" flex nav-right-container">
-             <div className="cart">
-              <Link to="/cart">Cart</Link>
+             <div className="cart-container">
+              <Link to="/cart">
+                <div className="flex cart-icon pr-5">
+                  <div className="pr-1">
+                    <FiShoppingCart/>
+                  </div>
+                <div className="cart-text">
+                   Cart
+                  </div>
+                 </div>
+              </Link>
              </div>
-        <div className="login-logo">
-            <Link to="/login">Login</Link>
+            <div className="login-container">
+            <Link to="/login">
+              <div className="flex login-icon pr-5">
+                <div className="pr-1">
+                  <RxPerson/>
+                  </div>
+                  <div className="login-text">
+                  Login
+                </div>
+              </div>
+            </Link>
           </div>
         </div>
       </div>
