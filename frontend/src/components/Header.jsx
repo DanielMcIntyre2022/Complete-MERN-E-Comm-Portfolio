@@ -1,8 +1,12 @@
 import { Link } from "react-router-dom";
 import { FiShoppingCart } from 'react-icons/fi';
 import { BsPerson } from 'react-icons/bs';
+import { useSelector } from 'react-redux';
 
 function Header() {
+
+  const amount = useSelector((store ) => store.cart.amount)
+
   return (
     <>
     <nav>
@@ -18,6 +22,7 @@ function Header() {
                 <div className="flex cart-icon pr-5">
                   <div className="pr-1 mt-1">
                     <FiShoppingCart/>
+                    <p className="total-amount">{amount}</p>
                   </div>
                 <div className="cart-text">
                    Cart
