@@ -4,7 +4,7 @@ function Header() {
   return (
     <>
     <nav>
-      <div className="flex justify-between bg-slate-200">
+      <div className="flex justify-between bg-slate-200 p-2">
         <div className="nav-left-container">
             <div className="company logo">
               <Link to="/">E-Commm</Link>

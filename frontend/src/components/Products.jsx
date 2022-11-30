@@ -34,15 +34,16 @@ function Products() {
     <div className='flex products-container'>
         {
           products.map(product => {
-            return <div className='border border-gray-800 product-container'>
+            return <div className='border border-gray-800 product-container p-2 mt-5'>
               <div className='product-image'>
                 <img src={product.image}/>
               </div>
               <div className='product-name'>
                 <p>{product.name}</p>
               </div>
-              <div className='product-price'>
+              <div className='flex justify-between product-price'>
                 <p>${product.price}</p>
+                <button className='bg-slate-300 rounded-lg p-2'>Add to Cart</button>
               </div>
             </div>
           })
